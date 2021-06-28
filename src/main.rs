@@ -41,7 +41,7 @@ async fn main() -> anyhow::Result<()> {
     let val: f64 = row.unwrap().get("Val").unwrap();
     let text = format!("Data from database: {}", val);
 
-    current_layer.use_text(text, 11.0, Mm(10.0), Mm(10.0), &font);
+    current_layer.use_text(text, 11.0, Mm(10.0), Mm(200.0), &font);
 
     // Save PDF.
     doc.save(&mut BufWriter::new(File::create("test_working.pdf").unwrap())).unwrap();
